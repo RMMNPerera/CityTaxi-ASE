@@ -6,5 +6,15 @@
         </div>
     </div>
 </header>
-
+<section class="py-5">
+    <div class="container">
+        <div class="card rounded-0 card-outline card-purple shadow px-4 px-lg-5 mt-5">
+            <div class="row">
+            <div class="card-body">
+                <?php include "about.html" ?>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
 
