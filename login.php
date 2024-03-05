@@ -3,6 +3,9 @@
 <html lang="en" class="" style="height: auto;">
  <?php require_once('inc/header.php') ?>
 <body class="hold-transition login-page">
+  <script>
+    start_loader()
+  </script>
   <style>
       body{
           /* width:calc(100%);
@@ -72,6 +75,17 @@
 </div>
 <!-- /.login-box -->
 
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
 
+<script>
+  $(document).ready(function(){
+    end_loader();
+  })
+</script>
 </body>
 </html>
