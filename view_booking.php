@@ -1,3 +1,8 @@
+<style>
+    #uni_modal .modal-footer{
+        display:none
+    }
+</style>
 <div class="container-fluid">
 
     <div class="row">
@@ -68,3 +73,32 @@
         <button class="btn btn-dark btn-flat bg-gradient-dark" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
     </div>
 </div>
+<script>
+    $(function(){
+        $('#cancel_booking').click(function(){
+            _conf("Are you sure to cancel your cab booking [Ref. Code: <b></b>]?", "cancel_booking",[""])
+        })
+    })
+    function cancel_booking($id){
+        start_loader();
+		$.ajax({
+			url:_base_url_+"classes/Master.php?f=update_booking_status",
+			method:"POST",
+			data:{id: $id,status:4},
+			dataType:"json",
+			error:err=>{
+				console.log(err)
+				alert_toast("An error occured.",'error');
+				end_loader();
+			},
+			success:function(resp){
+				if(typeof resp== 'object' && resp.status == 'success'){
+					location.reload();
+				}else{
+					alert_toast("An error occured.",'error');
+					end_loader();
+				}
+			}
+		})
+    }
+</script>
