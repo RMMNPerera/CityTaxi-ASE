@@ -1,6 +1,8 @@
+<?php require_once('./../config.php') ?>
 <!DOCTYPE html>
 <html lang="en" class="" style="height: auto;">
-<body>
+ <?php require_once('inc/header.php') ?>
+<body class="hold-transition login-page">
   <style>
       body{
           /* width:calc(100%);
@@ -17,6 +19,13 @@
       }
   </style>
 <div class="login-box">
+<?php $page = isset($_GET['page']) ? $_GET['page'] : 'home';  ?>
+     <?php if($_settings->chk_flashdata('success')): ?>
+      <script>
+        alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
+      </script>
+    <?php endif;?>
+  <!-- /.login-logo -->
   <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="System Logo" id="logo-img"></center>
   <div class="clear-fix my-2"></div>
   <div class="card card-outline card-purple">
@@ -62,5 +71,7 @@
   <!-- /.card -->
 </div>
 <!-- /.login-box -->
+
+
 </body>
 </html>
