@@ -1,3 +1,28 @@
+<<?php 
+if($_settings->userdata('id') > 0 && $_settings->userdata('login_type') == 2){
+    $qry = $conn->query("SELECT * FROM `client_list` where id = '{$_settings->userdata('id')}'");
+    if($qry->num_rows >0){
+        $res = $qry->fetch_array();
+        foreach($res as $k => $v){
+            if(!is_numeric($k)){
+                $$k = $v;
+            }
+        }
+    }else{
+        echo "<script> alert('You are not allowed to access this page. Unknown User ID.'); location.replace('./') </script>";
+    }
+}else{
+    echo "<script> alert('You are not allowed to access this page.'); location.replace('./') </script>";
+}
+?>
+<style>
+    #cimg{
+        width:15vw;
+        height:20vh;
+        object-fit:scale-down;
+        object-position:center center;
+    }
+</style>
 <div class="content py-5 mt-5">
     <div class="container">
         <div class="card card-outline card-purple shadow rounded-0">
@@ -109,3 +134,79 @@
         </div>
     </div>
 </div>
+<script>
+     window.displayImg = function(input,_this) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	        reader.onload = function (e) {
+	        	$('#cimg').attr('src', e.target.result);
+	        	_this.siblings('.custom-file-label').html(input.files[0].name)
+	        }
+
+	        reader.readAsDataURL(input.files[0]);
+	    }else{
+            $('#cimg').attr('src', "<?php echo validate_image(isset($image_path) ? $image_path : "") ?>");
+            _this.siblings('.custom-file-label').html("Choose file")
+        }
+	}
+    $(function(){
+        $('.pass_type').click(function(){
+            var type = $(this).attr('data-type')
+            if(type == 'password'){
+                $(this).attr('data-type','text')
+                $(this).closest('.input-group').find('input').attr('type',"text")
+                $(this).removeClass("fa-eye-slash")
+                $(this).addClass("fa-eye")
+            }else{
+                $(this).attr('data-type','password')
+                $(this).closest('.input-group').find('input').attr('type',"password")
+                $(this).removeClass("fa-eye")
+                $(this).addClass("fa-eye-slash")
+            }
+        })
+        $('#register-frm').submit(function(e){
+            e.preventDefault()
+            var _this = $(this)
+                    $('.err-msg').remove();
+            var el = $('<div>')
+                    el.hide()
+            if($('#password').val() != $('#cpassword').val()){
+                el.addClass('alert alert-danger err-msg').text('Password does not match.');
+                _this.prepend(el)
+                el.show('slow')
+                return false;
+            }
+            start_loader();
+            $.ajax({
+                url:_base_url_+"classes/Users.php?f=save_client",
+                data: new FormData($(this)[0]),
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
+                type: 'POST',
+                dataType: 'json',
+                error:err=>{
+                    console.log(err)
+                    alert_toast("An error occured",'error');
+                    end_loader();
+                },
+                success:function(resp){
+                    if(typeof resp =='object' && resp.status == 'success'){
+                        location.reload();
+                    }else if(resp.status == 'failed' && !!resp.msg){   
+                        el.addClass("alert alert-danger err-msg").text(resp.msg)
+                        _this.prepend(el)
+                        el.show('slow')
+                    }else{
+                        alert_toast("An error occured",'error');
+                        end_loader();
+                        console.log(resp)
+                    }
+                    end_loader();
+                    $('html, body').scrollTop(0)
+                }
+            })
+        })
+    })
+</script>
