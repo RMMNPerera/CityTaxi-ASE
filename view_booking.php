@@ -1,4 +1,5 @@
 <div class="container-fluid">
+
     <div class="row">
         <div class="col-md-6">
             <fieldset class="bor">
@@ -33,6 +34,27 @@
                     <dt class="">Drop off Zone</dt>
                     <dd class="pl-4"></dd>
                     <dt class="">Status</dt>
+                    <dd class="pl-4">
+                        <?php 
+                            switch($status){
+                                case 0:
+                                    echo "<span class='badge badge-secondary bg-gradient-secondary px-3 rounded-pill'>Pending</span>";
+                                    break;
+                                case 1:
+                                    echo "<span class='badge badge-primary bg-gradient-primary px-3 rounded-pill'>Driver Confirmed</span>";
+                                    break;
+                                case 2:
+                                    echo "<span class='badge badge-warning bg-gradient-warning px-3 rounded-pill'>Picked-up</span>";
+                                    break;
+                                case 3:
+                                    echo "<span class='badge badge-success bg-gradient-success px-3 rounded-pill'>Dropped off</span>";
+                                    break;
+                                case 4:
+                                    echo "<span class='badge badge-danger bg-gradient-danger px-3 rounded-pill'>Cancelled</span>";
+                                    break;
+                            }
+                        ?>
+                    </dd>
                 </dl>
             </fieldset>
         </div>
