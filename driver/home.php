@@ -34,27 +34,7 @@
                                 <p class="m-0 truncate-1"><b>Pickup:</b> <?= $row['pickup_zone'] ?></p>
                                 <p class="m-0 truncate-1"><b>Dropoff:</b> <?= $row['drop_zone'] ?></p>
                             </td>
-                            <td class="text-center">
-                                <?php 
-                                    switch($row['status']){
-                                        case 0:
-                                            echo "<span class='badge badge-secondary bg-gradient-secondary px-3 rounded-pill'>Pending</span>";
-                                            break;
-                                        case 1:
-                                            echo "<span class='badge badge-primary bg-gradient-primary px-3 rounded-pill'>Driver Confirmed</span>";
-                                            break;
-                                        case 2:
-                                            echo "<span class='badge badge-warning bg-gradient-warning px-3 rounded-pill'>Picked-up</span>";
-                                            break;
-                                        case 3:
-                                            echo "<span class='badge badge-success bg-gradient-success px-3 rounded-pill'>Dropped off</span>";
-                                            break;
-                                        case 4:
-                                            echo "<span class='badge badge-danger bg-gradient-danger px-3 rounded-pill'>Cancelled</span>";
-                                            break;
-                                    }
-                                ?>
-                            </td>
+
                             <td class="text-center">
                                 <button type="button" class="btn btn-flat btn-info border btn-sm view_data" data-id="">View Details</button>
                             </td>
