@@ -34,7 +34,7 @@
                                 <p class="m-0 truncate-1"><b>Pickup:</b> <?= $row['pickup_zone'] ?></p>
                                 <p class="m-0 truncate-1"><b>Dropoff:</b> <?= $row['drop_zone'] ?></p>
                             </td>
-                           
+
                             <td class="text-center">
                                 <button type="button" class="btn btn-flat btn-info border btn-sm view_data" data-id="">View Details</button>
                             </td>
