@@ -85,5 +85,15 @@
         })
 
     })
-   
+    $(document).scroll(function() { 
+        $('#topNavBar').removeClass('bg-purple navbar-light navbar-dark bg-gradient-purple text-light')
+        if($(window).scrollTop() === 0) {
+           $('#topNavBar').addClass('navbar-dark bg-purple text-light')
+        }else{
+           $('#topNavBar').addClass('navbar-dark bg-gradient-purple ')
+        }
+    });
+    $(function(){
+        $(document).trigger('scroll')
+    })
 </script>
