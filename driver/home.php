@@ -25,11 +25,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                       
-                        <tr>
-                            <td class="text-center"></td>
-                            <td></td>
-                            <td></td>
+                    <?php 
+                        $i = 1;
+                            $qry = $conn->query("SELECT * FROM `booking_list` where cab_id = '{$_settings->userdata('id')}' order by unix_timestamp(date_created) desc");
+                            while($row = $qry->fetch_assoc()):
+                        ?>
+
+<tr>
+                            <td class="text-center"><?= $i++; ?></td>
+                            <td><?= date("Y-m-d H:i", strtotime($row['date_created'])) ?></td>
+                            <td><?= $row['ref_code'] ?></td>
                             <td>
                                 <p class="m-0 truncate-1"><b>Pickup:</b> <?= $row['pickup_zone'] ?></p>
                                 <p class="m-0 truncate-1"><b>Dropoff:</b> <?= $row['drop_zone'] ?></p>
@@ -56,10 +61,10 @@
                                 ?>
                             </td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-flat btn-info border btn-sm view_data" data-id="">View Details</button>
+                            <button type="button" class="btn btn-flat btn-info border btn-sm view_data" data-id="<?= $row['id'] ?>">View Details</button>
                             </td>
                         </tr>
-                     
+                        <?php endwhile; ?>
                     </tbody>
                 </table>
             </div>  
