@@ -66,3 +66,13 @@
         </div>
     </div>
 </div>
+<script>
+    $(function(){
+        $('table th, table td').addClass('px-2 py-1 align-middle')
+        $('table').dataTable();
+
+        $('.view_data').click(function(){
+            uni_modal("Booking Details","view_booking.php?id="+$(this).attr('data-id'))
+        })
+    })
+</script>
