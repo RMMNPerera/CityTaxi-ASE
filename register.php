@@ -1,3 +1,7 @@
+<?php require_once('./config.php') ?>
+<!DOCTYPE html>
+<html lang="en">
+ <?php require_once('inc/header.php') ?>
 <body class="">
   <script>
     start_loader()
@@ -134,7 +138,7 @@
               </div>
           </div>
         </form>
-        <!-- /.social-auth-links -->
+        <!-- /.social-auth-links -->        
       </div>
       <!-- /.card-body -->
     </div>
