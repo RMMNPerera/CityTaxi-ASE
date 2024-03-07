@@ -8,15 +8,15 @@
   </script>
   <style>
       body{
-          /* width:calc(100%);
+          width:calc(100%);
           height:calc(100%);
           background-image:url('<?= validate_image($_settings->info('cover')) ?>');
           background-repeat: no-repeat;
-          background-size:cover; */
+          background-size:cover; 
       }
       #logo-img{
-          /* width:15em;
-          height:15em; */
+          width:15em;
+          height:15em;
           object-fit:scale-down;
           object-position:center center;
       }
