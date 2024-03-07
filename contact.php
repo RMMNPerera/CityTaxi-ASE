@@ -5,7 +5,7 @@
             <h1 class="display-4 fw-bolder mx-5">About Us</h1>
         </div>
     </div>
-</header> 
+</header>
 <section class="py-5">
     <div class="container">
         <div class="card rounded-0 card-outline card-purple shadow px-4 px-lg-5 mt-5">
