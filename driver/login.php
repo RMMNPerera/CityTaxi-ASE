@@ -1,14 +1,16 @@
+<?php require_once('./../config.php') ?>
 <!DOCTYPE html>
 <html lang="en" class="" style="height: auto;">
- <body class="hold-transition login-page">
+ <?php require_once('inc/header.php') ?>
+<body class="hold-transition login-page">
   <script>
     start_loader()
   </script>
   <style>
-     body{
+      body{
           width:calc(100%);
           height:calc(100%);
-          background-image:url('');
+          background-image:url('<?= validate_image($_settings->info('cover')) ?>');
           background-repeat: no-repeat;
           background-size:cover;
       }
@@ -20,8 +22,14 @@
       }
   </style>
 <div class="login-box">
+<?php $page = isset($_GET['page']) ? $_GET['page'] : 'home';  ?>
+     <?php if($_settings->chk_flashdata('success')): ?>
+      <script>
+        alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
+      </script>
+    <?php endif;?>
   <!-- /.login-logo -->
-  <center><img src="" alt="System Logo" id="logo-img"></center>
+  <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="System Logo" id="logo-img"></center>
   <div class="clear-fix my-2"></div>
   <div class="card card-outline card-purple">
     <div class="card-header text-center">
@@ -50,7 +58,7 @@
         </div>
         <div class="row align-items-center">
           <div class="col-8">
-            <a href="" style="text-decoration:none;">Back</a>
+            <a href="<?php echo base_url ?>" style="text-decoration:none;">Back</a>
           </div>
           <!-- /.col -->
           <div class="col-4">
