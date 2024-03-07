@@ -4,6 +4,21 @@
   <script>
     start_loader()
   </script>
+  <style>
+     body{
+          width:calc(100%);
+          height:calc(100%);
+          background-image:url('');
+          background-repeat: no-repeat;
+          background-size:cover;
+      }
+      #logo-img{
+          /* width:15em;
+          height:15em; */
+          object-fit:scale-down;
+          object-position:center center;
+      }
+  </style>
 <div class="login-box">
   <!-- /.login-logo -->
   <center><img src="" alt="System Logo" id="logo-img"></center>
