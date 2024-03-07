@@ -1,4 +1,32 @@
 <body class="">
+  <style>
+    html, body{
+      width:calc(100%);
+      height:calc(100%);
+    }
+      body{
+         
+          /* background-image:url('<?= validate_image($_settings->info('cover')) ?>');
+          background-repeat: no-repeat;
+          background-size:cover; */
+          background-color: rgb(143, 174, 202);
+      }
+      #logo-img{
+          width:15em;
+          height:15em;
+          object-fit:scale-down;
+          object-position:center center;
+      }
+      #cimg{
+          width:15vw;
+          height:20vh;
+          object-fit:scale-down;
+          object-position:center center;
+      }
+      .pass_type{
+        cursor: pointer;
+      }
+  </style>
 <div class="d-flex align-items-center justify-content-center ">
   <!-- /.login-logo -->
   <!-- <div class="d-flex  justify-content-center align-items-center col-lg-5">
