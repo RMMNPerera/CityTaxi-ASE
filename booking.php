@@ -11,12 +11,15 @@
 			<label for="drop_zone" class="control-label">Drop-off Location</label>
 			<textarea name="drop_zone" id="drop_zone" rows="2" class="form-control form-control-sm rounded-0" required></textarea>
 		</div>
+		<div class="col-auto mt-4">
+			<a class="btn btn-warning btn-lg rounded-0" href="register.php"><b>Booking Now</b></a>
+		</div>
 	</form>
-</div>
+</div><br>
 <div>
-<div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15845.345188268471!2d79.9145588098865!3d6.85023049498026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2507105492fab%3A0x5adc83492aee3910!2sMaharagama!5e0!3m2!1sen!2slk!4v1709736341640!5m2!1sen!2slk" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+	<div>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15845.345188268471!2d79.9145588098865!3d6.85023049498026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2507105492fab%3A0x5adc83492aee3910!2sMaharagama!5e0!3m2!1sen!2slk!4v1709736341640!5m2!1sen!2slk" width="100%" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
 </div>
 <script>
 	$(document).ready(function() {
