@@ -12,7 +12,7 @@
 			<textarea name="drop_zone" id="drop_zone" rows="2" class="form-control form-control-sm rounded-0" required></textarea>
 		</div>
 		<div class="col-auto mt-4">
-			<a class="btn btn-warning btn-lg rounded-0" href="register.php"><b>Booking Now</b></a>
+			<a class="btn btn-warning btn-lg rounded-0" href="register.php"><b>Book Now</b></a>
 		</div>
 	</form>
 </div><br>
