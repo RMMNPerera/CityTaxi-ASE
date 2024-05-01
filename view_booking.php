@@ -58,7 +58,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                     <dd class="pl-4"><?= isset($drop_zone) ? $drop_zone : "" ?></dd>
                     <dt class="">Status</dt>
                     <dd class="pl-4">
-                        <?php 
+                    <?php 
                             switch($status){
                                 case 0:
                                     echo "<span class='badge badge-secondary bg-gradient-secondary px-3 rounded-pill'>Pending</span>";
