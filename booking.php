@@ -11,7 +11,7 @@
 			<label for="drop_zone" class="control-label">Drop-off Location</label>
 			<textarea name="drop_zone" id="drop_zone" rows="2" class="form-control form-control-sm rounded-0" required></textarea>
 		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn btn-primary">Confirm Ride</button>
 	</form>
 </div>
 <div>
