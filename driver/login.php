@@ -1,4 +1,4 @@
-<?php require_once('./config.php') ?>
+<?php require_once('./../config.php') ?>
 <!DOCTYPE html>
 <html lang="en" class="" style="height: auto;">
  <?php require_once('inc/header.php') ?>
@@ -12,7 +12,7 @@
           height:calc(100%);
           background-image:url('<?= validate_image($_settings->info('cover')) ?>');
           background-repeat: no-repeat;
-          background-size:cover;
+          background-size:cover; 
       }
       #logo-img{
           width:15em;
@@ -33,19 +33,18 @@
   <div class="clear-fix my-2"></div>
   <div class="card card-outline card-purple">
     <div class="card-header text-center">
-      <a href="./" class="h4 text-decoration-none"><b>Client Login Panel</b></a>
+      <a href="./" class="h4 text-decoration-none"><b>Driver Login Panel</b></a>
     </div>
     <div class="card-body">
       
-
-      <form id="clogin-frm" action="" method="post">
+      <form id="dlogin-frm" action="" method="post">
         <div class="input-group mb-3">
         <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-user"></span>
             </div>
           </div>
-          <input type="email" class="form-control" name="email" placeholder="Email">
+          <input type="text" class="form-control" name="reg_code" placeholder="Reg.Code">
           
         </div>
         <div class="input-group mb-3">
@@ -66,11 +65,6 @@
             <button type="submit" class="btn btn-success btn-sm btn-flat btn-block">Log In</button>
           </div>
           <!-- /.col -->
-        </div>
-        <div class="row">
-            <div class="col-12 text-center">
-             <a href="<?php echo base_url.'register.php' ?>" style="text-decoration:none;">Create an Account</a>
-            </div>
         </div>
       </form>
       <!-- /.social-auth-links -->
